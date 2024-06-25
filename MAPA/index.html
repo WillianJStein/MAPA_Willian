@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Churrasco</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>CALCULADORA DE CHURRASCO</h1>
+      </header>
+      <main>
+        <div class="form-container">
+          <h2>Quantidade de pessoas</h2>
+          <form onsubmit="calcular(event)">
+            <div class="form-line">
+              <img
+                src="./asset/iconhomem.png"
+                alt="imagem do icone de homem"
+              />
+              <label for="homem">Homens</label>
+              <input
+                type="number"
+                min="0"
+                max="1000"
+                value="0"
+                id="homem"
+                name="homem"
+                placeholder="0"
+              />
+            </div>
+            <div class="form-line">
+              <img
+                src="asset/iconmulher.png"
+                alt="imagem do icone de mulher"
+              />
+              <label for="mulher">Mulheres</label>
+              <input
+                type="number"
+                min="0"
+                max="1000"
+                value="0"
+                id="mulher"
+                name="mulher"
+                placeholder="0"
+              />
+            </div>
+            <div class="form-line">
+              <img
+                src="./asset/iconcrian.png"
+                alt="imagem do icone de crianca"
+              />
+              <label for="crianca">Criança</label>
+              <input
+                type="number"
+                min="0"
+                max="1000"
+                value="0"
+                id="crianca"
+                name="crianca"
+                placeholder="0"
+              />
+            </div>
+            <button>Calcular</button>
+          </form>
+        </div>
+        <div class="result-container">
+          <h2>Quantidade de Itens</h2>
+          <p><span id="bovina">0</span>Kg de carne bonvina</p>
+          <p><span id="frango">0</span>Kg de frango</p>
+          <p><span id="linguica">0</span>Kg de linguiça</p>
+          <p><span id="refrigerante">0</span>L de refrigerante</p>
+          <p><span id="cerveja">0</span>L de cerveja</p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
