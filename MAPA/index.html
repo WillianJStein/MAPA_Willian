@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora de Churrasco</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
@@ -17,10 +21,7 @@
           <h2>Quantidade de pessoas</h2>
           <form onsubmit="calcular(event)">
             <div class="form-line">
-              <img
-                src="./asset/iconhomem.png"
-                alt="imagem do icone de homem"
-              />
+              <img src="./asset/iconhomem.png" alt="imagem do icone de homem" />
               <label for="homem">Homens</label>
               <input
                 type="number"
@@ -33,10 +34,7 @@
               />
             </div>
             <div class="form-line">
-              <img
-                src="asset/iconmulher.png"
-                alt="imagem do icone de mulher"
-              />
+              <img src="asset/iconmulher.png" alt="imagem do icone de mulher" />
               <label for="mulher">Mulheres</label>
               <input
                 type="number"
@@ -53,7 +51,7 @@
                 src="./asset/iconcrian.png"
                 alt="imagem do icone de crianca"
               />
-              <label for="crianca">Criança</label>
+              <label for="crianca">Crianças</label>
               <input
                 type="number"
                 min="0"
@@ -69,13 +67,56 @@
         </div>
         <div class="result-container">
           <h2>Quantidade de Itens</h2>
-          <p><span id="bovina">0</span>Kg de carne bonvina</p>
-          <p><span id="frango">0</span>Kg de frango</p>
-          <p><span id="linguica">0</span>Kg de linguiça</p>
-          <p><span id="refrigerante">0</span>L de refrigerante</p>
-          <p><span id="cerveja">0</span>L de cerveja</p>
+          <div class="result-item">
+            <p>
+              <span id="bovina"></span>Kg de carne bovina<img
+                class="itens"
+                src="./asset/iconcarne.png"
+                alt="imagem do icone de carne"
+              />
+            </p>
+          </div>
+          <div class="result-item">
+            <p>
+              <span id="frango"></span>Kg de frango<img
+                class="itens"
+                src="./asset/iconfrango.png"
+                alt="imagem do icone de coxa de frango"
+              />
+            </p>
+          </div>
+          <div class="result-item">
+            <p>
+              <span id="linguica"></span>Kg de linguiça<img
+                class="itens"
+                src="./asset/iconsalsicha.png"
+                alt="imagem do icone de salsicha"
+              />
+            </p>
+          </div>
+          <div class="result-item">
+            <p>
+              <span id="refrigerante"></span>L de refrigerante<img
+                class="itens"
+                src="./asset/iconrefrigerante.png"
+                alt="imagem do icone de refrigerante"
+              />
+            </p>
+          </div>
+          <div class="result-item">
+            <p>
+              <span id="cerveja"></span>L de cerveja<img
+                class="itens"
+                src="./asset/iconcerveja.png"
+                alt="imagem do icone de cerveja"
+              />
+            </p>
+          </div>
         </div>
       </main>
+      <footer id="footer">
+        <p>&copy; Codificado por Willian J. Steinbach - R.A. 23032608-5</p>
+      </footer>
     </div>
   </body>
 </html>
