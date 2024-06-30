@@ -13,6 +13,10 @@ body {
 header > h1 {
   color: #eee;
   text-shadow: 2px 2px 4px rgba(180, 103, 0, 0.1);
+  font-size: 2em; 
+  margin: 0;
+  padding: 10px;
+  text-align: center;
 }
 
 .container {
@@ -117,3 +121,22 @@ footer  {
   text-align: center;
   color: #eee;
   text-shadow: 2px 2px 30px rgb(68, 8, 8);}
+
+  /* Media queries para ajustar o layout em telas menores */
+@media (max-width: 600px) {
+  header > h1 {
+    font-size: 1.5em; /* Ajuste o tamanho da fonte para telas menores */
+    padding: 20px; /* Adicione mais espaço ao redor do texto */
+    padding-top: 20px;
+  }
+
+  main > div {
+    min-width: auto; /* Permite que os blocos se ajustem ao tamanho da tela */
+    width: 100%; /* Garante que os blocos ocupem a largura total da tela */
+    margin: 5px; /* Reduz o espaço entre os blocos para telas menores */
+  }
+
+  .form-container input[type="number"] {
+    width: 60px; /* Aumenta a largura dos inputs para facilitar o toque */
+  }
+}
