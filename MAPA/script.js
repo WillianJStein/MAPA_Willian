@@ -24,15 +24,11 @@ const consumption = {
 };
 
 function calcular(event) {
-  // Impedir que a pagina faca reload
+  // Impedir que a pagina faça reload
   event.preventDefault();
 
-  //   Obter valores do formulario por id
-  //   const homem = document.getElementById("homem").value;
-  //   const mulher = document.getElementById("mulher").value;
-  //   const crianca = document.getElementById("crianca").value;
-
-  //   Extrair campos do formulario para objeto
+  
+  //   Extrair campos do formulário para objeto
   const formData = new FormData(event.target);
   const data = Object.fromEntries(formData.entries());
   const { homem, mulher, crianca } = data;
@@ -48,7 +44,7 @@ function calcular(event) {
     return;
   }
 
-  //   Calcular quantidade
+  //  Calcular quantidade
   const bovino =
     homemQtd * consumption.HOMEM.BOVINA +
     mulherQtd * consumption.MULHER.BOVINA +
@@ -71,15 +67,24 @@ function calcular(event) {
 
   const cerveja =
     homemQtd * consumption.HOMEM.CERVEJA +
-    mulherQtd * consumption.MULHER.CERVEJA +
+    mulherQtd * consumption.MULHER.CERVEJA +  
     criancaQtd * consumption.CRIANCA.CERVEJA;
 
-  // Atualizar valor na pagina
-  document.getElementById("bovina").innerText = +bovino.toFixed(2);
-  document.getElementById("frango").innerText = +frango.toFixed(2);
-  document.getElementById("linguica").innerText = +linguica.toFixed(2);
-  document.getElementById("refrigerante").innerText = +refrigerante.toFixed(2);
-  document.getElementById("cerveja").innerText = +cerveja.toFixed(2);
+  //  Atualizar valor na página
+  document.getElementById("bovina").innerText = `${+bovino.toFixed(2)} Kg de carne bovina`;
+  document.getElementById("bovina").parentElement.querySelector("img").classList.remove("hidden");
+
+  document.getElementById("frango").innerText = `${+frango.toFixed(2)} Kg de frango`;
+  document.getElementById("frango").parentElement.querySelector("img").classList.remove("hidden");
+
+  document.getElementById("linguica").innerText = `${+linguica.toFixed(2)} Kg de linguica`;
+  document.getElementById("linguica").parentElement.querySelector("img").classList.remove("hidden");
+
+  document.getElementById("refrigerante").innerText = `${+refrigerante.toFixed(2)} L de refrigerante`;
+  document.getElementById("refrigerante").parentElement.querySelector("img").classList.remove("hidden");
+
+  document.getElementById("cerveja").innerText = `${+cerveja.toFixed(2)} L de cerveja`;
+  document.getElementById("cerveja").parentElement.querySelector("img").classList.remove("hidden");
 }
 
 // Checa se todos os valores sao numeros maiores que zero
