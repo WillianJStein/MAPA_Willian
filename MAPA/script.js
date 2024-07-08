@@ -89,7 +89,7 @@ function calcular(event) {
 
 // Checa se todos os valores sao numeros maiores que zero
 function areAllNumbersGreaterThanZero(...variables) {
-  return variables.every((variable) => {
+  return variables.some((variable) => {
     const num = +variable;
     return !isNaN(num) && num > 0;
   });
