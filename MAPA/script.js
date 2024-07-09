@@ -19,7 +19,6 @@ const consumption = {
     FRANGO: 0.1,
     LINGUICA: 0.2,
     REFRI: 0.2,
-    CERVEJA: 0,
   },
 };
 
@@ -27,7 +26,6 @@ function calcular(event) {
   // Impedir que a pagina faça reload
   event.preventDefault();
 
-  
   //   Extrair campos do formulário para objeto
   const formData = new FormData(event.target);
   const data = Object.fromEntries(formData.entries());
@@ -39,7 +37,7 @@ function calcular(event) {
   const criancaQtd = +crianca;
 
   // Valida os valores
-  if (!areSomeNumbersGreaterThanZero(homemQtd, mulherQtd, criancaQtd)) {
+  if (!isAnyNumbersGreaterThanZero(homemQtd, mulherQtd, criancaQtd)) {
     alert("Os valores devem ser números maiores que 0!");
     return;
   }
@@ -67,30 +65,51 @@ function calcular(event) {
 
   const cerveja =
     homemQtd * consumption.HOMEM.CERVEJA +
-    mulherQtd * consumption.MULHER.CERVEJA +  
-    criancaQtd * consumption.CRIANCA.CERVEJA;
+    mulherQtd * consumption.MULHER.CERVEJA;
 
   //  Atualizar valor na página
-  document.getElementById("bovina").innerText = `${+bovino.toFixed(2)} Kg de carne bovina`;
-  document.getElementById("bovina").parentElement.querySelector("img").classList.remove("hidden");
+  document.getElementById("bovina").innerText = `${+bovino.toFixed(
+    2
+  )} Kg de carne bovina`;
+  document
+    .getElementById("bovina")
+    .parentElement.querySelector("img")
+    .classList.remove("hidden");
 
-  document.getElementById("frango").innerText = `${+frango.toFixed(2)} Kg de frango`;
-  document.getElementById("frango").parentElement.querySelector("img").classList.remove("hidden");
+  document.getElementById("frango").innerText = `${+frango.toFixed(
+    2
+  )} Kg de frango`;
+  document
+    .getElementById("frango")
+    .parentElement.querySelector("img")
+    .classList.remove("hidden");
 
-  document.getElementById("linguica").innerText = `${+linguica.toFixed(2)} Kg de linguica`;
-  document.getElementById("linguica").parentElement.querySelector("img").classList.remove("hidden");
+  document.getElementById("linguica").innerText = `${+linguica.toFixed(
+    2
+  )} Kg de linguica`;
+  document
+    .getElementById("linguica")
+    .parentElement.querySelector("img")
+    .classList.remove("hidden");
 
-  document.getElementById("refrigerante").innerText = `${+refrigerante.toFixed(2)} L de refrigerante`;
-  document.getElementById("refrigerante").parentElement.querySelector("img").classList.remove("hidden");
+  document.getElementById("refrigerante").innerText = `${+refrigerante.toFixed(
+    2
+  )} L de refrigerante`;
+  document
+    .getElementById("refrigerante")
+    .parentElement.querySelector("img")
+    .classList.remove("hidden");
 
-  document.getElementById("cerveja").innerText = `${+cerveja.toFixed(2)} L de cerveja`;
-  document.getElementById("cerveja").parentElement.querySelector("img").classList.remove("hidden");
+  document.getElementById("cerveja").innerText = `${+cerveja.toFixed(
+    2
+  )} L de cerveja`;
+  document
+    .getElementById("cerveja")
+    .parentElement.querySelector("img")
+    .classList.remove("hidden");
 }
 
 // Checa se todos os valores sao numeros maiores que zero
-function areSomeNumbersGreaterThanZero(...variables) {
-  return variables.some((variable) => {
-    const num = +variable;
-    return !isNaN(num) && num > 0;
-  });
+function isAnyNumbersGreaterThanZero(...counts) {
+  return counts.some((counts) => counts > 0);
 }
