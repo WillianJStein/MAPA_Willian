@@ -39,7 +39,7 @@ function calcular(event) {
   const criancaQtd = +crianca;
 
   // Valida os valores
-  if (!areAllNumbersGreaterThanZero(homemQtd, mulherQtd, criancaQtd)) {
+  if (!areSomeNumbersGreaterThanZero(homemQtd, mulherQtd, criancaQtd)) {
     alert("Os valores devem ser números maiores que 0!");
     return;
   }
@@ -88,7 +88,7 @@ function calcular(event) {
 }
 
 // Checa se todos os valores sao numeros maiores que zero
-function areAllNumbersGreaterThanZero(...variables) {
+function areSomeNumbersGreaterThanZero(...variables) {
   return variables.some((variable) => {
     const num = +variable;
     return !isNaN(num) && num > 0;
