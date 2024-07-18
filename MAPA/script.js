@@ -68,46 +68,26 @@ function calcular(event) {
     mulherQtd * consumption.MULHER.CERVEJA;
 
   //  Atualizar valor na página
-  document.getElementById("bovina").innerText = `${+bovino.toFixed(
-    2
-  )} Kg de carne bovina`;
-  document
-    .getElementById("bovina")
-    .parentElement.querySelector("img")
-    .classList.remove("hidden");
-
-  document.getElementById("frango").innerText = `${+frango.toFixed(
-    2
-  )} Kg de frango`;
-  document
-    .getElementById("frango")
-    .parentElement.querySelector("img")
-    .classList.remove("hidden");
-
-  document.getElementById("linguica").innerText = `${+linguica.toFixed(
-    2
-  )} Kg de linguica`;
-  document
-    .getElementById("linguica")
-    .parentElement.querySelector("img")
-    .classList.remove("hidden");
-
-  document.getElementById("refrigerante").innerText = `${+refrigerante.toFixed(
-    2
-  )} L de refrigerante`;
-  document
-    .getElementById("refrigerante")
-    .parentElement.querySelector("img")
-    .classList.remove("hidden");
-
-  document.getElementById("cerveja").innerText = `${+cerveja.toFixed(
-    2
-  )} L de cerveja`;
-  document
-    .getElementById("cerveja")
-    .parentElement.querySelector("img")
-    .classList.remove("hidden");
+ updateResult("bovina", bovino, "Kg de carne bovina");
+  updateResult("frango", frango, "Kg de frango");
+  updateResult("linguica", linguica, "Kg de linguica");
+  updateResult("refrigerante", refrigerante, "L de refrigerante");
+  updateResult("cerveja", cerveja, "L de cerveja");
 }
+
+function updateResult(id, value, unit) {
+  const element = document.getElementById(id);
+  const imgElement = element.parentElement.querySelector("img");
+
+  if (value > 0) {
+    element.innerText = `${+value.toFixed(2)} ${unit}`;
+    imgElement.classList.remove("hidden");
+  } else {
+    element.innerText = "";
+    imgElement.classList.add("hidden");
+  }
+}
+
 
 // Checa se todos os valores sao numeros maiores que zero
 function isAnyNumbersGreaterThanZero(...counts) {
